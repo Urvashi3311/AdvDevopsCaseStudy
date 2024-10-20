@@ -14,6 +14,8 @@ def lambda_handler(event, context):
     response = s3.get_object(Bucket=bucket, Key=key)
     print(f"Processing file {key} from bucket {bucket}")
 
+    print("Lambda function updated!Now Processing{key} from {bucket}.")
+
     return {
         'statusCode': 200,
         'body': json.dumps('Image processed successfully!')
